@@ -1,0 +1,15 @@
+{
+	"name": "df-yr-sisger-datalake",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "77984a42-1eea-45d9-8811-ada671d5fc27",
+		"tenantId": "cc28633f-12b8-46cb-bc15-951dae239b4d"
+	}
+}
