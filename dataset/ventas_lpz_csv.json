@@ -1,0 +1,68 @@
+{
+	"name": "ventas_lpz_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datalake_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "bronce"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "ventas_sucursal_lpz.csv",
+				"folderPath": "Bronze",
+				"fileSystem": "datalake-ventas"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID_Venta",
+				"type": "String"
+			},
+			{
+				"name": "Fecha_Venta",
+				"type": "String"
+			},
+			{
+				"name": "Producto",
+				"type": "String"
+			},
+			{
+				"name": "Cant",
+				"type": "String"
+			},
+			{
+				"name": "PrecioUnit",
+				"type": "String"
+			},
+			{
+				"name": "Sucursal",
+				"type": "String"
+			},
+			{
+				"name": "Vendedor",
+				"type": "String"
+			},
+			{
+				"name": "NombreCliente",
+				"type": "String"
+			},
+			{
+				"name": "EmailCliente",
+				"type": "String"
+			},
+			{
+				"name": "MetodoPago",
+				"type": "String"
+			}
+		]
+	}
+}

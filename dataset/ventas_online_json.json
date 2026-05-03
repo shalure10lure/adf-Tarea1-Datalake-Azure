@@ -1,0 +1,68 @@
+{
+	"name": "ventas_online_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datalake_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "bronce"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "ventas_online.json",
+				"folderPath": "Bronze",
+				"fileSystem": "datalake-ventas"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"order_id": {
+					"type": "string"
+				},
+				"timestamp": {
+					"type": "string"
+				},
+				"product": {
+					"type": "string"
+				},
+				"qty": {
+					"type": "integer"
+				},
+				"unit_price": {
+					"type": "null"
+				},
+				"customer": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						}
+					}
+				},
+				"payment_method": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"shipping_cost": {
+					"type": "number"
+				},
+				"channel": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

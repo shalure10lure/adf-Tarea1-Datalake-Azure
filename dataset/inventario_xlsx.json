@@ -1,0 +1,70 @@
+{
+	"name": "inventario_xlsx",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datalake_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "bronce"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "inventario.xlsx",
+				"folderPath": "Bronze",
+				"fileSystem": "datalake-ventas"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "codigo_producto",
+				"type": "String"
+			},
+			{
+				"name": "nombre_producto",
+				"type": "String"
+			},
+			{
+				"name": "categoria",
+				"type": "String"
+			},
+			{
+				"name": "precio_venta",
+				"type": "String"
+			},
+			{
+				"name": "costo_adquisicion",
+				"type": "String"
+			},
+			{
+				"name": "stock_actual",
+				"type": "String"
+			},
+			{
+				"name": "stock_minimo",
+				"type": "String"
+			},
+			{
+				"name": "sucursal",
+				"type": "String"
+			},
+			{
+				"name": "proveedor",
+				"type": "String"
+			},
+			{
+				"name": "ultima_reposicion",
+				"type": "String"
+			},
+			{
+				"name": "activo",
+				"type": "String"
+			}
+		]
+	}
+}
