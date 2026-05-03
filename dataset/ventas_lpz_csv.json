@@ -18,6 +18,7 @@
 				"fileSystem": "datalake-ventas"
 			},
 			"columnDelimiter": ",",
+			"encodingName": "ISO-8859-1",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
