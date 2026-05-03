@@ -1,0 +1,59 @@
+{
+	"name": "convertir_json_csv",
+	"properties": {
+		"folder": {
+			"name": "bronce"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ventas_online_json",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "flatten1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          order_id as string,",
+				"          timestamp as string,",
+				"          product as string,",
+				"          qty as integer,",
+				"          unit_price as string,",
+				"          customer as (name as string, email as string, city as string),",
+				"          payment_method as string,",
+				"          status as string,",
+				"          shipping_cost as double,",
+				"          channel as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'arrayOfDocuments') ~> source1",
+				"source1 foldDown(unroll(),",
+				"     mapColumn(",
+				"          order_id,",
+				"          timestamp,",
+				"          product,",
+				"          qty,",
+				"          unit_price,",
+				"          customer,",
+				"          payment_method,",
+				"          status,",
+				"          shipping_cost,",
+				"          channel",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1"
+			]
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"name": "ventas_sc_limpio_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datalake_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "silver"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Silver",
+				"fileSystem": "datalake-ventas"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
